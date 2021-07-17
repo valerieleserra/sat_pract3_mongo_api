@@ -1,6 +1,6 @@
-const Country = require('../models/countriesModel')
+const Country = require('../models/countriesModel') 
 
-exports.createCountry = (req , res) => {
+exports.createCountry = (req , res) => { //creates country
     new Country(req.body)
     .save()
     .then(() => res.status(200).send('Created country'))
@@ -26,4 +26,4 @@ exports.getOneCountry = (req , res) => {
     .findOne({name: req.params.name})
     .then(country => res.send(country))
     .catch(err => console.log(err))
-}
+} 
